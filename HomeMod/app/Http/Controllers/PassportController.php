@@ -16,6 +16,29 @@ class PassportController extends Controller
      *
      * @return json
      */
+
+      public function allusers()
+    {
+        $users = User::all();
+        if($users==""){
+        return response()->json([
+            'success' => true,
+            'message' => 'Users Not Found Done.',
+            // 'data' => $Items
+
+        ], 404);
+        
+
+        }else{
+        return response()->json([
+            'success' => true,
+            'message' => 'Users Fetch Successfully Done.',
+            'data' => $users
+
+        ], 200);
+        
+    }
+}
     public function register(Request $request)
     {
         $input = $request->only(['name', 'email', 'password','lastname','confirm_password']);
