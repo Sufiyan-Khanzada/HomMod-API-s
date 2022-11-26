@@ -47,7 +47,7 @@ class PassportController extends Controller
             'name' => 'required|string|min:4',
             'email' => 'required|email',
             'password' => 'required|min:8',
-            'confirm_password' => 'same:password|required',
+            
             'lastname'=> 'required|string'
 
         ];

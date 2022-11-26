@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categerious;
+use App\Models\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Passport\TokenRepository;
@@ -15,7 +15,7 @@ class CategeriousController extends Controller
 
      public function allcat()
     {
-        $cat = Categerious::all();
+        $cat = Categories::all();
         if($cat==""){
         return response()->json([
             'success' => true,
@@ -124,7 +124,7 @@ if($images!=''){
             $full_image=$imagepath."/".$imageName;
 
           
-            $cat = new Categerious();
+            $cat = new Categories();
             $cat->main_category=$request->main_category;
             $cat->sub_category=$request->sub_category;
             $cat->sub_category1=$request->sub_category1;
@@ -149,7 +149,7 @@ if($images!=''){
          else {
             
 
-            $cat = new Categerious();
+            $cat = new Categories();
             $cat->main_category=$request->main_category;
             $cat->sub_category=$request->sub_category;
             $cat->sub_category1=$request->sub_category1;
@@ -178,7 +178,7 @@ if($images!=''){
 
  public function show_single_category(Request $request , $id)
     {
-         $cat = Categerious::find($id);
+         $cat = Categories::find($id);
         // $ids = $request->input('ids', []); // via injected instance of Request
       // $items1 = items::whereIn('id', explode(',', $id))->get();
        // $items1 = items::whereIn('id', explode(',', $id->$request->get()));
@@ -215,8 +215,8 @@ if($images!=''){
 
             $full_image=$imagepath."/".$imageName;
 
-            $cat = new Categerious();
-            $cat = Categerious::find($id);
+            $cat = new Categories();
+            $cat = Categories::find($id);
             
             if($pages){
             
@@ -243,8 +243,8 @@ if($images!=''){
             
          }  
             
-            $cat = new Categerious();
-            $cat = Categerious::find($id);
+            $cat = new Categories();
+            $cat = Categories::find($id);
             
            
          if($cat){
@@ -282,19 +282,9 @@ if($images!=''){
 
 
 
-
-
-
-
-
-
-
-
-
-
  public function destroy_cat($id)
     {
-        $delete_cat = Categerious::find($id);
+        $delete_cat = Categories::find($id);
         $delete_cat->delete();
    
         return response()->json([

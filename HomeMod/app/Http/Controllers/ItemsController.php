@@ -86,6 +86,8 @@ public function store(Request $request)
             'how_to_use' => 'required|string',
             'reviews' => 'required|string',
             'stock_available' => 'required|string',
+            'item_deal_box' => 'required|string',
+
 
 
             

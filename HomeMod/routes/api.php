@@ -36,7 +36,7 @@ Route::get('showall-cat', [CategeriousController::class, 'allcat']);
 Route::post('show-single_cat/{id}',[CategeriousController::class, 'show_single_category']);
 Route::post('delete-cat/{id}', [CategeriousController::class, 'destroy_cat']);
 Route::post('{id}/update-cat',[CategeriousController::class,'update_cat']);
-
+    
 
 
 
